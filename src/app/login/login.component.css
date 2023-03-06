@@ -1,0 +1,5 @@
+.content{
+    height: 70svh;
+    display: grid;
+    place-items: center;
+}
