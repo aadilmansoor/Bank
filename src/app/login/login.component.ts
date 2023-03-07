@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,11 +21,12 @@ export class LoginComponent {
     1003: {name: "Shammas", pass: 'abcdef123', acno: 1003, balance: 0}
   }
 
-  constructor(){ }
+  constructor(private router: Router){ }
 
   ngOnInit(): void {
 
   }
+//methods
 
   login(){
     var acnum = this.acno
@@ -34,6 +36,8 @@ export class LoginComponent {
     if(acnum in userDetails){
       if(pass==userDetails[acnum]["pass"]){
         alert("Login successfull")
+        //redirection
+        this.router.navigateByUrl("dashboard")
       } else {
         alert("Incorrect password")
       }
@@ -54,4 +58,8 @@ export class LoginComponent {
   }
 
 
+
+
 }
+
+
