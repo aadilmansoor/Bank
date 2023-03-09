@@ -1,1 +1,9 @@
-<p>register works!</p>
+<div class="content">
+<form style="background-color: rgba(25, 25, 26, 0.603);" action="" class="p-4 container w-50 text-center rounded-5 border" >
+    <h1 class="text-center" style="color:rgb(255, 255, 255) ;">Registeration</h1>
+    <input [(ngModel)]="uname" id="u2" name="username" type="text" style=" outline: none;" class="form-control mt-4 mb-4 p-2" placeholder="Name">
+    <input [(ngModel)]="acno" id="a2" name="acnum" type="text" class="form-control mt-4 mb-4 p-2" placeholder="Account Number" >
+    <input [(ngModel)]="psw" id="p2" name="psw" type="password" class="form-control mt-4 mb-4 p-2" placeholder="Password" >
+    <button (click)="register()" class="mt-4 p-2 btn btn-light">Register</button>
+</form>
+</div>

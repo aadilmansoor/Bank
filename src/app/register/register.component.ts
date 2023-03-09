@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-register',
@@ -7,4 +9,25 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  acno:any
+  psw:any
+  uname:any
+
+  constructor(private ds:DataService, private router:Router){}
+
+  register(){
+    var acno = this.acno
+    var psw = this.psw
+    var uname = this.uname
+
+    const result = this.ds.register(acno, uname, psw)
+
+    if(result){
+      alert('Registered Successfully')
+      this.router.navigateByUrl("")
+    } else {
+      alert('Account already exist')
+    }
+
+  }
 }
